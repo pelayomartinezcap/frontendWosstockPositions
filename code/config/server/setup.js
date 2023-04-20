@@ -66,7 +66,21 @@ module.exports = (server) => {
           .map((_, index) => ({
             id: `id-${index}`,
             name: `Product ${index}`,
-          })),
+          }))
+      );
+    }, 1000);
+  });
+
+  server.get("/frontend/v1/position", (_, res) => {
+    setTimeout(() => {
+      res.json(
+        Array(10)
+          .fill(null)
+          .map((_, index) => ({
+            id: `id-${index}`,
+            name: `Position ${index}`,
+            coordinates: `${index}_${index}_${index}_${index}`,
+          }))
       );
     }, 1000);
   });

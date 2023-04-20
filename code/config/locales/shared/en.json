@@ -3,5 +3,8 @@
   "app.name": "Application Name",
   "products.title": "Products",
   "products.counter": "Products {amount}",
-  "products.loading": "Loading Products..."
+  "products.loading": "Loading Products...",
+  "positions.title": "Positions",
+  "positions.counter": "Positions {amount}",
+  "positions.loading": "Loading Positions..."
 }
