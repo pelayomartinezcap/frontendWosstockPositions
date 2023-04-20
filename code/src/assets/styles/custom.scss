@@ -1,0 +1,37 @@
+@import "@amiga-fwk-web/sewing/sewing-ds.css";
+
+.page-grid-padding {
+  padding: var(--size5) 0px;
+  width: 100%;
+  height: calc(100% - (2 * var(--size5)));
+}
+
+.products-loader {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-loader__label {
+  margin-top: var(--size2);
+}
+
+.products-container {
+  width: 100%;
+  height: 100%;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.fullHeightContainer {
+  height: calc(100% - 43px);
+}

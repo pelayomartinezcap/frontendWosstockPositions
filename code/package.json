@@ -1,0 +1,59 @@
+{
+  "name": "test",
+  "version": "0.1.0-SNAPSHOT",
+  "description": "Amiga Fwk Web SPA",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "amiga-fwk-web build -o dist",
+    "bump:snapshot": "npm version $npm_package_version.$(date \"+%s\")",
+    "dev:setup": "git config core.hooksPath code/.hooks",
+    "lint": "eslint \"./{src,test}/**/*.{js,jsx,ts,tsx}\" --format @inditex/eslint-formatter-inditex",
+    "lint:fix": "eslint \"./{src,test}/**/*.{js,jsx,ts,tsx}\" --fix",
+    "lint:hook": "eslint",
+    "format": "eslint \"./{src,test}/**/*.{js,jsx,ts,tsx}\" --quiet --fix --fix-type layout",
+    "package": "echo \"no packaging needed\"",
+    "post:provisioning": "npm i",
+    "project:analysis": "amiga-fwk-web project-analysis -o ./dist/project-analysis.yml",
+    "release:prepare": "npm run verify && npm run project:analysis && npm run package",
+    "start": "amiga-fwk-web server --configmap ./../paas/config_paas/configmap_local.yml --base-path frontend/web",
+    "test": "npm run test:unit",
+    "test:unit": "amiga-fwk-web test --coverage",
+    "test:watch": "amiga-fwk-web test --watch --coverage",
+    "verify": "npm ci && npm run build && npm run lint && npm run test",
+    "version:development": "npm version $(npm version minor)-SNAPSHOT",
+    "version:release": "npm version $RELEASE_VERSION -m \"[npm-scripts] prepare release $RELEASE_VERSION\" --tag-version-prefix \"\""
+  },
+  "lint-staged": {
+    "(src|test)/**/*.(js|jsx|ts|tsx)": [
+      "npm run lint:hook"
+    ]
+  },
+  "eslintConfig": {
+    "root": true
+  },
+  "engines": {
+    "node": ">= 16.13.x < 17.x",
+    "npm": ">= 8.1.x",
+    "yarn": ">= 1.22.0"
+  },
+  "devDependencies": {
+    "@amiga-fwk-web/all": "9.26.1",
+    "@amiga-fwk-web/tools": "9.26.1",
+    "@inditex/eslint-config": "^1.3.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@types/prop-types": "15.7.5",
+    "@types/jest": "27.4.1",
+    "@types/react": "18.0.24",
+    "@types/react-dom": "18.0.8",
+    "lint-staged": "11.2.6",
+    "sass": "1.52.1",
+    "sass-loader": "13.0.0",
+    "ts-jest": "27.1.4",
+    "ts-loader": "9.4.1",
+    "typescript": "4.8.4",
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
+	}
+}

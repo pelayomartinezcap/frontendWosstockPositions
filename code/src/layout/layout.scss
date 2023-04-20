@@ -1,0 +1,6 @@
+@import "@amiga-fwk-web/sewing/sewing-ds.css";
+
+.pg-layout__app-name {
+  @add-mixin font-heading-s;
+  color: var(--color-token-dark-content-1);
+}

@@ -1,0 +1,27 @@
+# Apple
+.DS_Store
+
+# Editor
+.vscode
+
+# Build
+/dist
+
+# Local config
+.npmrc
+.yarnrc
+
+# Logs
+*.log
+*.heapsnapshot
+
+# Dependencies
+node_modules
+
+# Tests
+coverage
+test-report.json
+
+# Yarn
+.yarnclean
+yarn-error.log

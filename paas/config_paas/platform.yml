@@ -1,0 +1,25 @@
+app:
+  openshift_template: com.inditex.sentinel:senttapp-nginx:2.10.0
+  context_path_builder:
+    enabled: true
+  node:
+    max_mem_ratio: 75
+    trace_gc_enabled: true
+  has_limit: true
+  services:
+    http:
+      route:
+        tls:
+          enabled: true
+          insecure_termination_policy: None
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  request:
+    cpu: 500m
+    memory: 256Mi
+  replicas: 1
+metadata:
+  developModel: CORPORATE
+  layer: core
+  namespace_id: 

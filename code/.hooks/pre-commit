@@ -1,0 +1,4 @@
+#!/bin/sh
+[ -n "$GITHUB_ACTIONS" ] && exit 0
+cd code
+npx lint-staged

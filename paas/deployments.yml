@@ -1,0 +1,10 @@
+supraenvironments:
+  - name: des
+    environments:
+      - name: des
+        platforms:
+          - name: iopaksweu1vn3xt
+            tenants:
+              - name: global
+                slots:
+                  - name: default

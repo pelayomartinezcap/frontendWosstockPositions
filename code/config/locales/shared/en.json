@@ -1,0 +1,7 @@
+{
+  "amigaApplication.title": "Application Name",
+  "app.name": "Application Name",
+  "products.title": "Products",
+  "products.counter": "Products {amount}",
+  "products.loading": "Loading Products..."
+}

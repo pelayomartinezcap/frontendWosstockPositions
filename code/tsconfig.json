@@ -1,0 +1,28 @@
+{
+  "include": ["src/**/*", "@types"],
+  "exclude": ["node_modules/**"],
+  "compilerOptions": {
+    "paths": {
+      "*": ["@types/*"],
+      "@/*": ["src/*"],
+      "config/*": ["config/*"],
+      "#/*": ["test/*"]
+    },
+    "baseUrl": ".",
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "inlineSourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "strict": true,
+    "alwaysStrict": true,
+    "resolveJsonModule": true,
+    "traceResolution": false,
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "skipLibCheck": true,
+    "lib": ["es5", "es6", "es7", "es2017", "es2018", "es2019", "es2020", "dom"]
+  }
+}

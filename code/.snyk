@@ -1,0 +1,44 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.22.2
+patch: {}
+ignore:
+  SNYK-JS-WORDWRAP-3149973:
+    - " * > @amiga-fwk-web/tools@9.26.1 > eslint@8.38.0 > optionator@0.9.1 > word-wrap@1.2.3":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > eslint-watch@8.0.0 > optionator@0.9.1 > word-wrap@1.2.3":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > json-server@0.17.3 > standard@17.0.0 > eslint@8.38.0 > optionator@0.9.1 > word-wrap@1.2.3":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > jest@27.5.1 > @jest/core@27.5.1 > jest-config@27.5.1 > jest-environment-jsdom@27.5.1 > jsdom@16.7.0 > escodegen@2.0.0 > optionator@0.8.3 > word-wrap@1.2.3":
+      reason: "Cannot upgrade dependency"
+
+  SNYK-JS-D3COLOR-1076592:
+    - " * > @amiga-fwk-web/x-charts@9.26.1 > d3-scale@1.0.7 > d3-color@1.4.1":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/x-charts@9.26.1 > d3-scale@1.0.7 > d3-interpolate@1.4.0 > d3-color@1.4.1":
+      reason: "Cannot upgrade dependency"
+
+  SNYK-JS-CSSWHAT-1298035:
+    - " * > @amiga-fwk-web/tools@9.26.1 > postcss-inline-svg@5.0.0 > css-select@3.1.2 > css-what@4.0.0":
+      reason: "No remediation available"
+
+  SNYK-JS-JSON5-3182856:
+    - " * > @amiga-fwk-web/tools@9.26.1 > @babel/core@7.20.7 > json5@2.2.1":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > @svgr/webpack@6.5.1 > @babel/core@7.20.7 > json5@2.2.1":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > fetch-mock@9.11.0 > @babel/core@7.20.7 > json5@2.2.1":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > eslint-plugin-import@2.26.0 > tsconfig-paths@3.14.1 > json5@1.0.1":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > babel-plugin-module-resolver@4.1.0 > find-babel-config@1.2.0 > json5@0.5.1":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > babel-loader@8.2.5 > loader-utils@2.0.4 > json5@2.2.1":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > monaco-editor-webpack-plugin@7.0.1 > loader-utils@2.0.4 > json5@2.2.1":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > babel-jest@27.5.1 > @jest/transform@27.5.1 > @babel/core@7.20.7 > json5@2.2.1":
+      reason: "Cannot upgrade dependency"
+    - " * > @amiga-fwk-web/tools@9.26.1 > jest@27.5.1 > @jest/core@27.5.1 > @jest/reporters@27.5.1 > @jest/transform@27.5.1 > @babel/core@7.20.7 > json5@2.2.1":
+      reason: "Cannot upgrade dependency"
+org-id: 

@@ -1,0 +1,7 @@
+app:
+  limits:
+    cpu: 1000m
+    memory: 1024Mi
+  request:
+    cpu: 100m
+    memory: 256Mi
