@@ -21,12 +21,14 @@ const PositionPage = () => {
       .then((res) => {
         setLoading(false);
         if (res.ok) {
+          console.log(res);
           return res.json();
         }
         throw new Error(`Status ${res.status}`);
       })
       .then((positions: Positions[]) => {
         setPositions(positions);
+        console.log(positions);
       })
       .catch(console.error);
   }, []);

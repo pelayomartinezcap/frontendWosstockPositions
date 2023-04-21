@@ -73,18 +73,64 @@ module.exports = (server) => {
 
   server.get("/frontend/v1/position", (_, res) => {
     setTimeout(() => {
-      res.json(
-        Array(10)
-          .fill(null)
-          .map((_, index) => ({
-            id: `id-${index}`,
-            name: `Position ${index}`,
-            coordinates: `${index}_${index}_${index}_${index}`,
-          }))
-      );
+      res.json(generateMockPositions());
     }, 1000);
   });
 
+  const generateMockPositions = () => {
+    const positionsArray = Array(100)
+      .fill(null)
+      .map((_, index) => {
+        let isRack = Math.round(Math.random());
+        let isTower = Math.round(Math.random());
+        if (!isRack && !isTower) {
+          isRack = 1;
+        }
+        if (isRack && isTower) {
+          isRack = 0;
+        }
+        let state, disabled;
+        if (isRack) {
+          state = index % 2 === 0 ? "Libre" : "Ocupado";
+          disabled = state === "Error";
+        } else {
+          state = null;
+          disabled = false;
+        }
+        const rackPosition = isRack
+          ? {
+              latticeCode: `${index}_${index}_${index}_${index}_${index}`,
+              positionX: index,
+              positionY: index,
+              positionZ: index,
+              positionSide: index,
+              positionAside: index,
+              container: {
+                id: index,
+                numberBulk: index,
+                state: "ok",
+              },
+            }
+          : null;
+        const towerPosition = isTower
+          ? {
+              id: index,
+              tipo: index % 2 === 0 ? "Salida" : "Entrada",
+            }
+          : null;
+        return {
+          id: `id-${index}`,
+          name: `Position ${index}`,
+          state,
+          disabled,
+          isRack,
+          isTower,
+          rackPosition,
+          towerPosition,
+        };
+      });
+    return positionsArray;
+  };
   // // To support GraphQL it's possible to integrate Apollo Server into the mock.
   // // All the required dependencies must be added to the project.
   // const { ApolloServer, gql } = require("apollo-server-express"); // eslint-disable-line global-require

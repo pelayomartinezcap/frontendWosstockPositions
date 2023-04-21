@@ -6,5 +6,10 @@ export type Product = {
 export type Positions = {
   id: string;
   name: string;
-  coordinates: string;
+  state: string;
+  disabled: boolean;
+  isRack: boolean;
+  isTower: boolean;
+  rackPosition?: object;
+  towerPosition?: object;
 };
