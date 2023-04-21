@@ -58,8 +58,25 @@ module.exports = (server) => {
   });
 
   // MOCKED SERVICE
-  server.get("/frontend/v1/product", (_, res) => {
+  server.get("/frontend/v1/containers", (_, res) => {
+    console.log('Endpoint1');
     setTimeout(() => {
+      console.log('Endpoint2');
+      res.json(
+        Array(10)
+          .fill(null)
+          .map((_, index) => ({
+            id: `id-${index}`,
+            name: `Container ${index}`,
+          })),
+      );
+    }, 1500);
+  });
+
+  server.get("/frontend/v1/product", (_, res) => {
+    console.log('Endpoint1');
+    setTimeout(() => {
+      console.log('Endpoint2');
       res.json(
         Array(10)
           .fill(null)
@@ -68,7 +85,7 @@ module.exports = (server) => {
             name: `Product ${index}`,
           })),
       );
-    }, 1000);
+    }, 1500);
   });
 
   // // To support GraphQL it's possible to integrate Apollo Server into the mock.

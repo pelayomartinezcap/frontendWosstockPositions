@@ -8,16 +8,16 @@ import { SimpleListItem } from "@amiga-fwk-web/components-content/simple-list";
 import Label from "@amiga-fwk-web/components-content/label";
 import api from "../../utils/api";
 import type { RenderItemProps } from "@amiga-fwk-web/components-content/list";
-import type { Product } from "./types";
+import type { Container } from "./types";
 
-const ProductsPage = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+const ContainersPage = () => {
+  const [containers, setContainers] = useState<Container[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     api
-      .getApp("/v1/product")
+      .getApp("/v1/containers")
       .then((res) => {
         setLoading(false);
         if (res.ok) {
@@ -25,15 +25,16 @@ const ProductsPage = () => {
         }
         throw new Error(`Status ${res.status}`);
       })
-      .then((products: Product[]) => {
-        console.log(products);
+      .then((Containers: Container[]) => {
+        console.log(loading);
+        console.log(Containers);
         
-        setProducts(products);
+        setContainers(Containers);
       })
       .catch(console.error);
   }, []);
 
-  const renderItem = ({ onItemClick, item: { id, name } }: RenderItemProps<Product>) => {
+  const renderItem = ({ onItemClick, item: { id, name } }: RenderItemProps<Container>) => {
     console.log(id);
     
     return <SimpleListItem testId={`product-list-element-${id}`} key={id} onClick={onItemClick} label={name} />;
@@ -46,25 +47,25 @@ const ProductsPage = () => {
           <Row>
             <Col>
               <h2>
-                <FormattedMessage id="products.title" />
+                <FormattedMessage id="containers.title" />
               </h2>
             </Col>
             <Col className="text--right">
-              <Label label={<FormattedMessage id="products.counter" values={{ amount: products.length }} />} />
+              <Label label={<FormattedMessage id="containers.counter" values={{ amount: containers.length }} />} />
             </Col>
           </Row>
           <Row className="fullHeightContainer">
             <Col className="fullHeight">
               {loading ? (
                 <div className="loader">
-                  <Loader testId="products-loader" />
+                  <Loader testId="containers-loader" />
                   <div className="loader__label">
-                    <FormattedMessage id="products.loading" />
+                    <FormattedMessage id="containers.loading" />
                   </div>
                 </div>
               ) : (
                 <div className="element-container">
-                  <List testId="product-list" items={products} renderItem={renderItem} />
+                  <List testId="container-list" items={containers} renderItem={renderItem} />
                 </div>
               )}
             </Col>
@@ -75,4 +76,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default ContainersPage;
