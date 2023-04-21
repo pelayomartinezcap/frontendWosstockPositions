@@ -6,7 +6,8 @@
   height: calc(100% - (2 * var(--size5)));
 }
 
-.products-loader {
+.products-loader,
+.positions-loader {
   display: flex;
   width: 100%;
   height: 100%;
@@ -15,11 +16,13 @@
   justify-content: center;
 }
 
-.products-loader__label {
+.products-loader__label,
+.positions-loader__label {
   margin-top: var(--size2);
 }
 
-.products-container {
+.products-container,
+.positions-container {
   width: 100%;
   height: 100%;
 }
