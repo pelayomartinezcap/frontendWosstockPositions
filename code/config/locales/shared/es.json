@@ -1,10 +1,17 @@
 {
-  "amigaApplication.title": "Nombre Aplicación",
-  "app.name": "Nombre Aplicación",
+  "amigaApplication.title": "Test Frontend",
+  "app.name": "Test Frontend",
   "containers.title": "Contenedores",
   "containers.counter": "{amount} Contenedores",
   "containers.loading": "Cargando los Contenedores...",
   "products.title": "Productos",
   "products.counter": "Productos {amount}",
-  "products.loading": "Cargando los productos..."
+  "products.loading": "Cargando los productos...",
+  "filters.tag": "Matrícula",
+  "filters.id": "Identificador único",
+  "filters.dc": "Centro de distribución",
+  "filters.size": "Tamaño",
+  "filters.typeC": "Tipo de contenedor",
+  "filters.weight": "Peso",
+  "filters.status": "Estado"
 }

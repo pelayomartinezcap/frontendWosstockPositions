@@ -35,3 +35,21 @@
 .fullHeightContainer {
   height: calc(100% - 43px);
 }
+
+table {
+  display: table;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  table {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  table {
+    display: table;
+  }
+}

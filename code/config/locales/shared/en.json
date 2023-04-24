@@ -6,5 +6,12 @@
   "containers.loading": "Loading Containers...",
   "products.title": "Products",
   "products.counter": "Products {amount}",
-  "products.loading": "Loading Products..."
+  "products.loading": "Loading Products...",
+  "filters.tag": "Tag",
+  "filters.id": "Unique identifier",
+  "filters.dc": "Distribution center",
+  "filters.size": "Size",
+  "filters.typeC": "Container type",
+  "filters.weight": "Weight",
+  "filters.status": "Status"
 }

@@ -1,4 +1,5 @@
 module.exports = (server) => {
+  const apiContainers = require('./containers');
   // Mock JANUS endpoints for SPA authentication
   server.get("/hmdlquery/HEIMDAL/api/v1/app/:appId/authdata", (req, res) => {
     if (!req.headers.cookie.includes("mock_janus_token")) {
@@ -59,24 +60,23 @@ module.exports = (server) => {
 
   // MOCKED SERVICE
   server.get("/frontend/v1/containers", (_, res) => {
-    console.log('Endpoint1');
+    let ar = apiContainers.createContainers(15)
     setTimeout(() => {
-      console.log('Endpoint2');
-      res.json(
-        Array(10)
-          .fill(null)
-          .map((_, index) => ({
-            id: `id-${index}`,
-            name: `Container ${index}`,
-          })),
-      );
-    }, 1500);
-  });
+      res.json(ar), 
+      3500
+    });
+  })
+
+  server.get("/frontend/v1/filterContainers", (req, res) => {
+    let ar = apiContainers.filterContainers(15)
+    setTimeout(() => {
+      res.json(ar), 
+      3500
+    });
+  })
 
   server.get("/frontend/v1/product", (_, res) => {
-    console.log('Endpoint1');
     setTimeout(() => {
-      console.log('Endpoint2');
       res.json(
         Array(10)
           .fill(null)
