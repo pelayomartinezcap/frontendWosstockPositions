@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import Page from "../../../layout/page";
 import FormattedMessage from "@amiga-fwk-web/components-intl/formatted-message";
 import Loader from "@amiga-fwk-web/components-feedback/loader";
@@ -9,10 +9,17 @@ import Label from "@amiga-fwk-web/components-content/label";
 import api from "../../../utils/api";
 import type { RenderItemProps } from "@amiga-fwk-web/components-content/list";
 import type { Positions } from "../types";
+import DataGrid from "@amiga-fwk-web/components-data-viz/data-grid/data-grid";
+import { DataGridColumns } from "@amiga-fwk-web/components-data-viz/data-grid/types";
+import {
+  HeaderRenderer,
+  TextRenderer,
+} from "@amiga-fwk-web/components-data-viz/data-grid";
 
 const PositionPage = () => {
   const [positions, setPositions] = useState<Positions[]>([]);
   const [loading, setLoading] = useState(false);
+  const getRowId = useCallback((datum: { id: any }) => datum.id, []);
 
   useEffect(() => {
     setLoading(true);
@@ -47,6 +54,16 @@ const PositionPage = () => {
     );
   };
 
+  const columns: DataGridColumns<Positions> = useMemo(() => {
+    return {
+      id: {
+        fixed: true,
+        header: () => <HeaderRenderer>Id</HeaderRenderer>,
+        cell: ({ datum }) => <TextRenderer>{datum.id}</TextRenderer>,
+      },
+    };
+  }, []);
+
   return (
     <Page>
       <div className="page-grid-padding">
@@ -68,24 +85,15 @@ const PositionPage = () => {
               />
             </Col>
           </Row>
-          <Row className="fullHeightContainer">
-            <Col className="fullHeight">
-              {loading ? (
-                <div className="positions-loader">
-                  <Loader testId="positions-loader" />
-                  <div className="positions-loader__label">
-                    <FormattedMessage id="positions.loading" />
-                  </div>
-                </div>
-              ) : (
-                <div className="positions-container">
-                  <List
-                    testId="positions-list"
-                    items={positions}
-                    renderItem={renderItem}
-                  />
-                </div>
-              )}
+          {/* table grid */}
+          <Row>
+            <Col>
+              <DataGrid
+                data={positions}
+                getRowId={getRowId}
+                columns={columns}
+                loading={loading}
+              ></DataGrid>
             </Col>
           </Row>
         </Grid>
