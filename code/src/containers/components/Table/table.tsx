@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import Table, { THead, TBody, Tr, Td, Th } from "@amiga-fwk-web/components-content/table";
+import FormattedMessage from "@amiga-fwk-web/components-intl/formatted-message";
 import { ContainerType } from "../types";
 
 const TableContainers = (props: { containers: ContainerType[] }) => {    
@@ -11,21 +12,21 @@ const TableContainers = (props: { containers: ContainerType[] }) => {
             <THead>
                 <Tr>
                     <Th colSpan={3}></Th>
-                    <Th colSpan={3}>Tamaño</Th>
+                    <Th colSpan={3}><FormattedMessage id="container.size" /></Th>
                     <Th colSpan={2}></Th>
-                    <Th colSpan={2}>Estado</Th>
+                    <Th colSpan={2}><FormattedMessage id="container.status" /></Th>
                 </Tr>
                 <Tr>
-                    <Th>Matricula</Th>
-                    <Th>Identificador</Th>
-                    <Th>Centro distribucion</Th>
-                    <Th>Largo</Th>
-                    <Th>Ancho</Th>
-                    <Th>Alto</Th>
-                    <Th>Tipo contenedor</Th>
-                    <Th>Peso</Th>
-                    <Th>Estado</Th>
-                    <Th>Descripcion de estado</Th>
+                    <Th><FormattedMessage id="container.tag" /></Th>
+                    <Th><FormattedMessage id="container.id" /></Th>
+                    <Th><FormattedMessage id="container.dc" /></Th>
+                    <Th><FormattedMessage id="container.size.length" /></Th>
+                    <Th><FormattedMessage id="container.size.width" /></Th>
+                    <Th><FormattedMessage id="container.size.height" /></Th>
+                    <Th><FormattedMessage id="container.typeC" /></Th>
+                    <Th><FormattedMessage id="container.weight" /></Th>
+                    <Th><FormattedMessage id="container.status.name" /></Th>
+                    <Th><FormattedMessage id="container.status.description" /></Th>
                 </Tr>
             </THead>
             <TBody>

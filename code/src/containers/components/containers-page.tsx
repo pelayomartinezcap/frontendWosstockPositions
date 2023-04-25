@@ -38,7 +38,7 @@ const ContainersPage = () => {
 
   const loadData = (params: object) => 
   api
-  .getApp("/v1/filterContainers")
+  .getApp("/v1/filterContainers", { body: {} })
   .then((res) => {
     setLoading(false);
     if (res.ok) {

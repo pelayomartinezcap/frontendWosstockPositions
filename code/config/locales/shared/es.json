@@ -7,11 +7,16 @@
   "products.title": "Productos",
   "products.counter": "Productos {amount}",
   "products.loading": "Cargando los productos...",
-  "filters.tag": "Matrícula",
-  "filters.id": "Identificador único",
-  "filters.dc": "Centro de distribución",
-  "filters.size": "Tamaño",
-  "filters.typeC": "Tipo de contenedor",
-  "filters.weight": "Peso",
-  "filters.status": "Estado"
+  "container.tag": "Matrícula",
+  "container.id": "Identificador único",
+  "container.dc": "Centro de distribución",
+  "container.size": "Tamaño",
+  "container.size.length": "Largo",
+  "container.size.width": "Ancho",
+  "container.size.height": "Alto",
+  "container.typeC": "Tipo de contenedor",
+  "container.weight": "Peso",
+  "container.status": "Estado",
+  "container.status.name": "Nombre del estado",
+  "container.status.description": "Descripción del estado"
 }

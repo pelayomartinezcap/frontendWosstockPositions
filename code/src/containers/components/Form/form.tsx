@@ -21,41 +21,51 @@ const FormContainers = (props: { submit: any; }) => {
             <Grid>
                 <Row>
                     <Col>
-                        <FormField field="tag" label={intl.formatMessage({ id: "filters.tag" })}>
+                        <FormField field="tag" label={intl.formatMessage({ id: "container.tag" })}>
                             <TextField  />
                         </FormField>
                     </Col>
                     <Col>
-                        <FormField field="id" label={intl.formatMessage({ id: "filters.id" })}>
-                            <TextField  />
-                        </FormField>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <FormField field="dc" label={intl.formatMessage({ id: "filters.dc" })}>
-                            <TextField  />
-                        </FormField>
-                    </Col>
-                    <Col>
-                        <FormField field="size" label={intl.formatMessage({ id: "filters.size" })}>
+                        <FormField field="id" label={intl.formatMessage({ id: "container.id" })}>
                             <TextField  />
                         </FormField>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <FormField field="type" label={intl.formatMessage({ id: "filters.typeC" })}>
+                        <FormField field="dc" label={intl.formatMessage({ id: "container.dc" })}>
                             <TextField  />
                         </FormField>
                     </Col>
                     <Col>
-                        <FormField field="weight" label={intl.formatMessage({ id: "filters.weight" })}>
+                        <FormField field="size.lenth" label={intl.formatMessage({ id: "container.size.length" })}>
                             <TextField  />
                         </FormField>
                     </Col>
                     <Col>
-                        <FormField field="status" label={intl.formatMessage({ id: "filters.status" })}>
+                        <FormField field="size.width" label={intl.formatMessage({ id: "container.size.width" })}>
+                            <TextField  />
+                        </FormField>
+                    </Col>
+                    <Col>
+                        <FormField field="size.height" label={intl.formatMessage({ id: "container.size.height" })}>
+                            <TextField  />
+                        </FormField>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <FormField field="type" label={intl.formatMessage({ id: "container.typeC" })}>
+                            <TextField  />
+                        </FormField>
+                    </Col>
+                    <Col>
+                        <FormField field="weight" label={intl.formatMessage({ id: "container.weight" })}>
+                            <TextField  />
+                        </FormField>
+                    </Col>
+                    <Col>
+                        <FormField field="status" label={intl.formatMessage({ id: "container.status" })}>
                             <Select name="select" label="Select" options={options}  />
                         </FormField>
                     </Col>
