@@ -4,6 +4,7 @@
   padding: var(--size5) 0px;
   width: 100%;
   height: calc(100% - (2 * var(--size5)));
+  overflow-y: scroll;
 }
 
 .loader {
@@ -30,10 +31,6 @@
 
 .fullHeight {
   height: 100%;
-}
-
-.fullHeightContainer {
-  height: calc(100% - 43px);
 }
 
 table {

@@ -53,7 +53,7 @@ const ProductsPage = () => {
               <Label label={<FormattedMessage id="products.counter" values={{ amount: products.length }} />} />
             </Col>
           </Row>
-          <Row className="fullHeightContainer">
+          <Row>
             <Col className="fullHeight">
               {loading ? (
                 <div className="loader">

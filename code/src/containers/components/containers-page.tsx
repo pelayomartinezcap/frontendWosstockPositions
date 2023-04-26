@@ -66,7 +66,7 @@ const ContainersPage = () => {
   return (
     <Page>
       <div className="page-grid-padding">
-        <Grid className="fullHeight" type="dense">
+        <Grid type="dense">
           <Row>
             <Col>
               <h2>
@@ -83,7 +83,7 @@ const ContainersPage = () => {
             </Col>
           </Row>
           <Row>
-            <Col >
+            <Col>
               {loading ? (
                 <div className="loader">
                   <Loader testId="containers-loader" />
